@@ -1,18 +1,43 @@
 function jumpSearch(search_arr, search_val) {
     let startIndex = 0;
     let endIndex = search_arr.length - 1;
+    let steps = Math.floor(Math.sqrt(search_arr.length));
 
-    while (startIndex <= endIndex) {
+    
+    /* while (startIndex <= endIndex) {
+        startIndex = startIndex + steps;
+        console.log("Loop startIndex at: " + startIndex);
 
-    }
+        if (search_val >= search_arr[startIndex]) {
+            while (startIndex > endIndex) {
+                startIndex--;
+                console.log("re-setting startIndex at: " + startIndex);
+            }
+        }
 
-    return search_val + ' not found';
+        if (search_val <= search_arr[startIndex]) {
+            endIndex = startIndex;
+            startIndex = endIndex - steps;
+            console.log("re-setting startIndex at: " + startIndex);
+
+            while (startIndex <= endIndex) {
+                if (search_val == search_arr[startIndex]) {
+                    console.log("Found value");
+                    return startIndex;
+                }
+                startIndex++;
+            }
+
+            return search_val + ' not found';
+        }
+
+    } */
 
 }
 
-function getSearchResult() {
-    let searchVal = $(".jump [data-id |='search_string'").val();
-    let searchArray = $(".jump [data-id |='search_array'").val();
+function getJumpSearchResult() {
+    let searchVal = $(".jump-search").find("[data-id |='search_string']").val();
+    let searchArray = $(".jump-search").find("[data-id |='search_array']").val();
     let message = '';
 
     if (!searchArray || (searchArray && searchArray.trim() == '')) {
@@ -32,14 +57,15 @@ function getSearchResult() {
         return false;
     }
 
-    console.time("jump_search_time");
-
     let start = window.performance.now();
+
+    console.time("search_time");
     /* Calling jump search function */
     let res = jumpSearch(searchArray, searchVal);
 
-    $(".jump [data-id |='result_box'").val(res);
-    $(".jump [data-id |='exe_time_box'").val(window.performance.now() - start);
+    console.timeEnd("search_time");
 
-    console.timeEnd("jump_search_time");
+    $(".jump-search").find("[data-id |='result_box']").val(res);
+    $(".jump-search").find("[data-id |='exe_time_box']").val(window.performance.now() - start);
+
 }

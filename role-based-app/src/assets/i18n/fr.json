@@ -1,0 +1,13 @@
+{
+    "welcome": "Bienvenue {{ user_name }}!",
+    "posts": [
+        {
+            "title": "About me",
+            "body": "I am a web developer located in Pune, MH (India)"
+        },
+        {
+            "title": "My Skills",
+            "body": "I works on various technologies including front-end development using Angular and React"
+        }
+    ]
+}

@@ -31,6 +31,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -127,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "role-based-app"
+  "defaultProject": "role-based-app",
+  "cli": {
+    "analytics": "785be56b-6d97-4225-97ce-5b5121c3e341"
+  }
 }

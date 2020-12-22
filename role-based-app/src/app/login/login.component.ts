@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     if (this.username == "admin" && this.password == "adminpass") {
       window.localStorage.setItem('isLogin', "yes");
       window.localStorage.setItem('role', "admin");
-      window.localStorage.setItem('user_name', 'Anil');
+      window.localStorage.setItem('user_name', 'Chandrakant K');
       this.navigate();
       return false;
     }

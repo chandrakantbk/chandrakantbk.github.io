@@ -2,12 +2,12 @@
     "welcome": "Bienvenue {{ user_name }}!",
     "posts": [
         {
-            "title": "About me",
-            "body": "I am a web developer located in Pune, MH (India)"
+            "title": "À propos de moi",
+            "body": "Je suis un développeur web basé à Pune, MH (India)"
         },
         {
-            "title": "My Skills",
-            "body": "I works on various technologies including front-end development using Angular and React"
+            "title": "Mes compétences",
+            "body": "Je travaille sur diverses technologies dont le développement front-end en utilisant Angular et React"
         }
     ]
 }

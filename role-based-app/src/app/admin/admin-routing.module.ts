@@ -10,6 +10,7 @@ import { ViewItemsContainerComponent } from '../shared-view/view-items-container
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
+  { path: '', component: AdminDashboardComponent },
   { path: 'dashboard', component: AdminDashboardComponent },
   { path: 'view/:type', component: ViewItemsContainerComponent },
   { path: 'user/create', component: UserItemUpdateComponent },

@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AdminLayoutComponent } from './admin/admin-layout/admin-layout.component';
+import { DemosListComponent } from './demos/demos-list/demos-list.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth.service';
-import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 import { UserLayoutComponent } from './user/user-layout/user-layout.component';
 
 const routes: Routes = [
@@ -32,9 +31,19 @@ const routes: Routes = [
     ]
   },
 
+  {
+    path: 'demo',
+    component: DemosListComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./demos/demos.module').then((m) => m.DemosModule)
+      },
+    ]
+  },
   { path: 'login', component: LoginComponent },
   { path: '', component: LoginComponent },
-  { path: '**', redirectTo: 'login', pathMatch: 'full' },
+  // { path: '**', redirectTo: 'login', pathMatch: 'full' },
 
 ];
 

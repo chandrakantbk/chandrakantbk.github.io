@@ -69,8 +69,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "role-based-app:build"
-          },
+            "browserTarget": "role-based-app:build",
+            "port": 4500
+           },
           "configurations": {
             "production": {
               "browserTarget": "role-based-app:build:production"
